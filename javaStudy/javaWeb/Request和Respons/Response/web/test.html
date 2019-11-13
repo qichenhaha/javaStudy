@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload = function () {
+            // 1.获取图片对象
+           var image =  document.getElementById("checkCode");
+           image.onclick = function () {
+               // 加时间戳
+               var date = new Date().getTime();
+               image.src = "/Response_war_exploded/CheckCodeServlet?"+ date
+           }
+
+        }
+
+    </script>
+</head>
+<body>
+    <img id="checkCode" src="/Response_war_exploded/CheckCodeServlet">
+    <a id="change" href="/Response_war_exploded/CheckCodeServlet">看不清换一张</a>
+</body>
+</html>
