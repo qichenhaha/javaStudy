@@ -210,5 +210,41 @@
       4. 验证码
    
          1. 本质是一张图片
-         2. 目的
+         2. 目的：防止恶意表单注册
+   
+3. ServletContext对象 
+
+   1. 概念：代表整个web应用，可以和程序的容器（服务器）来通信
+   2. 功能：
+      1. 获取MIME类型
+         - MIME类型：在互联网通信过程中定义的一种文件数据类型
+         - 格式： 大类型/小类型  text/html 
+         - 获取 String mimeType = servletContext.getMimeType(filename);
+      2. 域对象：共享数据
+         - setAttrbute(String name,Object value)
+         - getAttribute(String name)
+         - removeAttribute(String name)
+         - ServletContext对象访问:所有用户请求数据
+      3. 获取文件的真实（服务器）路径
+         1. 获取文件服务器路径web目录下的资源
+            1. context.getRealPath("/b.txt")
+            2. context.getRealPath("/WEB-INF/c.txt")
+
+4. 文件下载需求
+
+   1. 文件下载
+      1. 页面显示超连接
+      2. 点击超连接后弹出下载提示框
+      3. 完成图片文件下载
+   2. 分析
+      1. 超链接指向的资源如果能够被浏览器解析，则在浏览器中展示，如果不能解析，则弹出下载提示框，不能满足需求，
+      2. 任何资源都必须弹出下载提示框
+      3. 使用响应头设置资源的打开方式
+   3. 步骤
+      1. 定义页面，编辑超连接href属性，指向Sevlet，传递资源名称filename
+      2. 定义Servlet
+         1. 获取文件名称
+         2. 使用字节流加载文件进内存
+         3. 指定response的响应头：content-disposition:attachment;filename=xxx
+         4. 将数据写出response输出流
 
