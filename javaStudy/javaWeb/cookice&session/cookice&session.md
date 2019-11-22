@@ -127,4 +127,9 @@
       
             1. session用于存储一次会话的多次请求的数据，存在服务器端
             2. session可以存储任意类型，任意大小的数据
-            3. 
+      
+         5. Session与cookie的区别
+      
+            1. Session是存储的服务器端，Cookie是存储在客户端的
+            2. session没用大小限制，cookie有限制
+            3. session数据安全，cookie数据不安全

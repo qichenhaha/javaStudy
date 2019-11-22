@@ -8,17 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Create by heidan on 2019/11/18 22:12
+ * Create by heidan on 2019/11/21 19:28
  */
-@WebServlet("/test")
-public class test extends HttpServlet {
+@WebServlet("/user/ServletDemo01")
+public class ServletDemo01 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("test");
+        this.doPost(req, resp);
+        System.out.println("ServletDemo01");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req, resp);
+
     }
 }

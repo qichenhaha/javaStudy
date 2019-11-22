@@ -10,6 +10,7 @@ import java.io.IOException;
 
 /**
  * Create by heidan on 2019/11/15 15:22
+
  *
  * Cookice快速入门
  */
@@ -28,7 +29,6 @@ public class CookiceDemo02 extends HttpServlet {
                 System.out.println("key:"+ name+"===>value:"+ value);
             }
         }
-
 
     }
 
