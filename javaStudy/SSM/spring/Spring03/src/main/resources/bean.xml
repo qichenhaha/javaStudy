@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+    通过注解来配置bean
+    用户创建对象，他们的作用和在xml配置文件中编写一个<bean>标签实现功能是一样的
+    Component：
+        作用： 用于将当前对象存入spring容器中
+        属性: value： 用于指定bean的id。当我们不写的时候。它的默认值是当前类名，且首字母小写
+    Controller： 一般用在表现层
+    Service ： 一般用于业务层
+    Repository：一般用于持久层
+    以上三个注解他们的作用和属性与Component是一模一样的。
+    他们三个是spring框架为我们提供明确的三层使用注解，使我们三层更加清晰
+
+    注入数据
+    他们的作用就是和xml配置中的bean标签中写一个<property> 标签的作用是一样的
+    Autowired:
+        作用：自动按照类型注入。只要容器中有唯一的bean对象类型和要注入的变量类型匹配就可以注入成功
+              如果IOC 容器中没有任何bean的类型和变量类型匹配，则报错
+              如果IOC 容器中有多个类型匹配时，首先按照类型圈定出来匹配的对象，它会使用变量名称作为ID进行注入
+        出现的位置: 可以是变量上。也可以是方法上
+
+    Qualifier:
+        作用：在按照类中注入的基础上在按照名称进行注入。他在类成员注入时，不能单独使用
+        属性:
+            value: 用于指定注入的bean
+
+     Resource：
+        作用: 直接按照bean的id注入。它可以单独使用
+        属性:
+            name：用于指定bean的ID
+
+      以上三个注入只能注入bean类型的数据，而基本类型和String类型无法使用上述注解实现，
+      另外集合类型的注入只能通过xml的实现。
+
+
+      用于改变作用范围
+
+       他们的作用就和在bean标签中使用scope属性实现的功能是一样的
+       Scope
+        作用： 用户指定bean的作用范围
+        属性:
+            value: 指定属性的取值范围。常用取值： singleton  prototype
+    -->
+
+    <!--此标签用于扫描当前包下的注解，来实现bean的自动载入-->
+    <context:component-scan base-package="com.heidan"/>
+
+</beans>

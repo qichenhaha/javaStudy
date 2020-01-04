@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heidan.dao.AccountDao">
+
+    <sql id="Column">
+        id,name,money
+    </sql>
+
+    <select id="findAll" resultType="Account">
+        select 
+        <include refid="Column"/>
+        from account
+    </select>
+
+    <update id="saveUpdate">
+        update account set money=#{money} where id = #{id}
+    </update>
+
+
+</mapper>

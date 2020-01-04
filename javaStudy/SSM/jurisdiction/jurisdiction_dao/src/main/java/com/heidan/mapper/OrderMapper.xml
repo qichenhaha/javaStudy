@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heidan.dao.IOrderMapper">
+
+    <sql id="order">
+        id,order_num,order_time,people_count,order_desc,pay_type,order_status,productId,memberId
+    </sql>
+    
+    <resultMap id="ordermap" type="Orders">
+        <id property="id" column="id"></id>
+        <result property="orderNum" column="order_num"></result>
+        <result property="orderTime" column="order_time"></result>
+        <result property="peopleCount" column="people_count"></result>
+        <result property="orderDesc" column="order_desc"></result>
+        <result property="payType" column="pay_type"></result>
+        <result property="orderStatus" column="order_status"></result>
+        <association property="productId" column="productId" javaType="Product" select="com.heidan.dao.IProductMapper.ProductById"></association>
+        <association property="memberId" column="memberId" javaType="Member" select="com.heidan.dao.IMemberMapper.findById"></association>
+        <collection property="travellers" column="id" javaType="java.util.ArrayList" ofType="Orders" select="com.heidan.dao.ITravellerMapper.finInId"></collection>
+    </resultMap>
+
+    <select id="orderById" parameterType="java.lang.Integer" resultMap="ordermap">
+        SELECT * FROM orders WHERE id = #{id}
+    </select>
+
+</mapper>

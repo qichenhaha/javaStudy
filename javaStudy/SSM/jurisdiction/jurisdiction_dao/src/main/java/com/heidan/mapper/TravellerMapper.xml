@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heidan.dao.ITravellerMapper">
+    <sql id="traveller">
+        id,name,sex,phone_num,credentials_type,credentials_num,traveller_type
+    </sql>
+
+    <select id="finInId" parameterType="java.lang.Integer" resultType="Traveller">
+        select <include refid="traveller"/> from  traveller
+         WHERE id in
+         (SELECT order_traveller.travellerId FROM order_traveller WHERE order_traveller.orderId = #{id})
+    </select>
+</mapper>

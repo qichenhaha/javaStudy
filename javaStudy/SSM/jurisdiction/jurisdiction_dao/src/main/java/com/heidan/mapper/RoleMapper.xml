@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heidan.dao.IRoleMapper">
+
+    <resultMap id="roleid" type="Role">
+        <id column="id" property="id"></id>
+        <result column="role_name" property="roleName"></result>
+        <result column="role_desc" property="roleDesc"></result>
+        <collection property="permissions" column="id" javaType="java.util.ArrayList" ofType="Permission" select="com.heidan.dao.IPermission.findByRoleId"></collection>
+    </resultMap>
+
+    <select id="finByRole" parameterType="java.lang.Integer" resultMap="roleid">
+        SELECT * FROM role WHERE id in
+        (SELECT user_role.role_id FROM user_role WHERE user_role.user_id = #{id})
+    </select>
+
+    <select id="finBynotid" parameterType="java.lang.Integer" resultType="Role">
+    SELECT * FROM role WHERE NOT id in(SELECT user_role.role_id FROM user_role WHERE user_role.user_id = #{id})
+    </select>
+</mapper>
