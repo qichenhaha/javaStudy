@@ -24,7 +24,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public PageInfo<Product> findAll() throws Exception {
         System.out.println("成功进入findAll()==>service层a");
-        PageHelper.startPage(1,2);
+        PageHelper.startPage(1, 2);
         List<Product> products = iProductMapper.finAll();
         PageInfo page = new PageInfo(products);
         return page;

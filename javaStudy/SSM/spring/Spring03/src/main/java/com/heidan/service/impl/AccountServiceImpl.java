@@ -14,11 +14,9 @@ public class AccountServiceImpl implements IAccountService {
     @Autowired
     private IAccountDao accountDao;
 
-    public AccountServiceImpl(){
+    public AccountServiceImpl() {
         System.out.println("AccountServiceImpl对象被创建了");
     }
-
-
 
     @Override
     public void saveAccount() {

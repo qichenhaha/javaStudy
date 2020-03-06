@@ -20,10 +20,10 @@ public class OrdersController {
     /*@RequestMapping(value ="ordersbyid",produces = {"application/json;charset=UTF-8"})*/
     @RequestMapping("ordersbyid")
     @ResponseBody
-    public Orders ordersById(Integer id){
+    public Orders ordersById(Integer id) {
         System.out.println("成功进入");
         Orders orders = iOrderService.ordersById(id);
-        System.out.println("controller返回查询结果:" +orders);
+        System.out.println("controller返回查询结果:" + orders);
         /*String string = JSON.toJSONString(orders);*/
         return orders;
     }

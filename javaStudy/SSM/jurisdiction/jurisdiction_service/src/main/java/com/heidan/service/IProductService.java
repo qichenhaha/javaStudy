@@ -10,11 +10,10 @@ import com.heidan.entity.Product;
 public interface IProductService {
     PageInfo<Product> findAll() throws Exception;
 
-     int insertProduct(Product product);
+    int insertProduct(Product product);
 
     int ProductDeleteById(Integer id);
 
     Product ProductById(Integer id);
-
 
 }

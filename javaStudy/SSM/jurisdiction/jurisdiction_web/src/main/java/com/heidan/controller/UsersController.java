@@ -26,25 +26,25 @@ public class UsersController {
     @RequestMapping("/finall")
     @Secured("ROLE_ADMIN")
     @ResponseBody
-    public Object finall(){
+    public Object finall() {
         List<Users> users = iUserService.finAll();
         System.out.println(users);
         return "";
     }
 
     @PostMapping("/insert")
-    public Object insert(Users users){
+    public Object insert(Users users) {
         int i = iUserService.inserUsers(users);
-        if (i>=1){
+        if (i >= 1) {
             System.out.println("插入成功！");
-        }else {
+        } else {
             System.out.println("插入失败！");
         }
         return "";
     }
 
     @RequestMapping("/finallByid")
-    public Object finById(Integer id){
+    public Object finById(Integer id) {
         Users user = iUserService.finById(id);
         System.out.println("user:" + user);
         return "";

@@ -10,6 +10,7 @@ public interface IMemberMapper {
 
     /**
      * 根据ID查询会员信息
+     *
      * @param id
      * @return
      */

@@ -18,11 +18,11 @@ public class TravellController {
     @Autowired
     private ITravellService iTravellService;
 
-    @RequestMapping(value = "finInId",produces = {"application/json;charset=UTF-8"})
-    public Object finInId(Integer id){
+    @RequestMapping(value = "finInId", produces = {"application/json;charset=UTF-8"})
+    public Object finInId(Integer id) {
         List<Traveller> travellers = iTravellService.finInId(id);
         for (Traveller traveller : travellers) {
-            System.out.println("controller返回结果:"+traveller);
+            System.out.println("controller返回结果:" + traveller);
         }
         return "";
     }

@@ -19,16 +19,14 @@ public class TestLogger {
 
     @Before("execution(* com.heidan.service.*.*(..))")
     public void before(JoinPoint jp) {
-        log.info("用户正在请求,"+jp.getTarget()+"控制器中的"+jp.getSignature().getName()+"方法");
-        log.info("拿到的参数"+ Arrays.toString(jp.getArgs()));
+        log.info("用户正在请求," + jp.getTarget() + "控制器中的" + jp.getSignature().getName() + "方法");
+        log.info("拿到的参数" + Arrays.toString(jp.getArgs()));
     }
 
-    @AfterReturning(value = "execution(* com.heidan.service.*.*(..))",returning = "result")
-    public void afterReturning(JoinPoint jd,Object result) {
-        log.info("调用"+jd.getTarget()+"的"+jd.getSignature().getName()+"方法");
-        log.info("返回值是"+result);
+    @AfterReturning(value = "execution(* com.heidan.service.*.*(..))", returning = "result")
+    public void afterReturning(JoinPoint jd, Object result) {
+        log.info("调用" + jd.getTarget() + "的" + jd.getSignature().getName() + "方法");
+        log.info("返回值是" + result);
     }
-
-
 
 }

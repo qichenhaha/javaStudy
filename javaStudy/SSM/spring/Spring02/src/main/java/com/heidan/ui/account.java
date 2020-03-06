@@ -11,7 +11,7 @@ public class account {
     public static void main(String[] args) {
         IAccountService ac = (IAccountService) BeanFactory.getBean("accountService");
 
-        for (int i =1;i<=5;i++){
+        for (int i = 1; i <= 5; i++) {
             ac.saveAccount();
         }
 

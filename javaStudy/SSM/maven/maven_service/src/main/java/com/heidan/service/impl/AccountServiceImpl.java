@@ -14,11 +14,10 @@ import java.util.List;
  * Create by heidan on 2019/12/26 12:04
  */
 @Service("accountServiceImpl")
-@Transactional(propagation= Propagation.SUPPORTS,readOnly=true)//只读型事务的配置
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)//只读型事务的配置
 public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountDao accountDao;
-
 
     @Override
     public List<Account> findAll() {
@@ -29,13 +28,12 @@ public class AccountServiceImpl implements AccountService {
         return all;
     }
 
-
     @Override
     public int saveAccount(Account account) {
         int i = accountDao.saveAccount(account);
         System.out.println(i);
         System.out.println("业务层保存账户信息");
-        int a = 1/0;
+        int a = 1 / 0;
         System.out.println(a);
         Account ac = new Account();
         ac.setName("v1");
@@ -44,17 +42,17 @@ public class AccountServiceImpl implements AccountService {
         return i;
     }
 
-    @Transactional(propagation=Propagation.REQUIRED)
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public void saveUpdate(){
+    public void saveUpdate() {
         System.out.println("执行");
-        accountDao.saveUpdate(500,23);
-        String string  = null;
-        if(string.equals("")) {
+        accountDao.saveUpdate(500, 23);
+        String string = null;
+        if (string.equals("")) {
             int i = 0;
         }
         System.out.println("继续执行");
-        accountDao.saveUpdate(1500,24);
+        accountDao.saveUpdate(1500, 24);
 
     }
 }

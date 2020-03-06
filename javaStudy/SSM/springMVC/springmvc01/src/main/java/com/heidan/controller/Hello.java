@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Hello {
 
     @RequestMapping("hello01")
-    public String sayHello(){
+    public String sayHello() {
         System.out.println("Hello StringMVC");
         return "sucess";
     }
 
     @PostMapping("testjson")
     @ResponseBody
-    public String TestJson(@RequestBody String body){
+    public String TestJson(@RequestBody String body) {
         System.out.println("请求消息体：" + body);
         return body;
     }

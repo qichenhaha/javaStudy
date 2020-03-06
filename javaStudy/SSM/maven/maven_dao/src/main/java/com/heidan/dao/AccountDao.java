@@ -11,17 +11,18 @@ import java.util.List;
 public interface AccountDao {
     /**
      * 查询所有账户信息
+     *
      * @return
      */
     public List<Account> findAll();
 
     /**
      * 保存账户信息
+     *
      * @param account
      */
     public int saveAccount(Account account);
 
     public int saveUpdate(@Param("money") int money, @Param("id") int id);
-
 
 }

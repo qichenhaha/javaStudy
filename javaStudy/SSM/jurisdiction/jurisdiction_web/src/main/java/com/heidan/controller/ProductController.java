@@ -69,15 +69,12 @@ public class ProductController {
     }*/
 
     @RequestMapping("byid")
-    public Object byid(Integer id){
+    public Object byid(Integer id) {
         System.out.println("成功进入根据Id查询");
         Product product = iProductService.ProductById(id);
         System.out.println("controller返回数据:" + product);
         return "";
 
     }
-
-
-
 
 }

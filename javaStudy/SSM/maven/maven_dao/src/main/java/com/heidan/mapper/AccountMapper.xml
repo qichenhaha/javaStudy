@@ -9,7 +9,7 @@
     </sql>
 
     <select id="findAll" resultType="Account">
-        select 
+        select
         <include refid="Column"/>
         from account
     </select>

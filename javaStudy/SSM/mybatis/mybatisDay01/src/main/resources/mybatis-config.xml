@@ -31,11 +31,9 @@
     </environments>
 
 
-
-
     <!-- 指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件 -->
     <mappers>
         <mapper resource="com/heidan/mapper/IUserDao.xml"/>
-<!--        <mapper class="com.heidan.dao.IUserDao"/>-->
+        <!--        <mapper class="com.heidan.dao.IUserDao"/>-->
     </mappers>
 </configuration>

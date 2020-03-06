@@ -18,17 +18,17 @@ public class AccountController {
     private AccountService accountService;
 
     @RequestMapping("findAll")
-    public String findall(){
+    public String findall() {
         System.out.println("表现层查询所有的信息");
         List<Account> all = accountService.findAll();
         for (Account account : all) {
-            System.out.println("表现层打印==>"+ account);
+            System.out.println("表现层打印==>" + account);
         }
         return "list";
     }
 
     @RequestMapping("/save")
-    public String save(Account account){
+    public String save(Account account) {
         System.out.println("成功进入！");
         int i = accountService.saveAccount(account);
         return "list";

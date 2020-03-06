@@ -21,12 +21,11 @@ public class RoleController {
 
     @RequestMapping("finBynotid")
     @RolesAllowed("ADMIN")
-    public Object finBynotid(Integer id){
+    public Object finBynotid(Integer id) {
         System.out.println("成功进入finBynotid");
         List<Role> roles = iRoleService.finBynotid(id);
         System.out.println(roles);
         return "";
     }
-
 
 }

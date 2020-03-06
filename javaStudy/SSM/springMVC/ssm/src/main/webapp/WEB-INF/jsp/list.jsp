@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>查询所有的账户信息了</h1>
+<h1>查询所有的账户信息了</h1>
 </body>
 </html>

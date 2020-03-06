@@ -13,7 +13,8 @@ public class AccountServiceImpl implements IAccountService {
 
     private IAccountDao accountDao = (IAccountDao) BeanFactory.getBean("accountDao");
 
-    private int i  =1;
+    private int i = 1;
+
     @Override
     public void saveAccount() {
 

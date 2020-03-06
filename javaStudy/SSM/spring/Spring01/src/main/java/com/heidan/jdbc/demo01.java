@@ -5,16 +5,16 @@ import java.sql.*;
 /**
  * Create by heidan on 2019/12/21 12:16
  * 程序的耦合:
- *      耦合：程序间的依赖关系
- *              包括：
- *                  类之间的依赖
- *                  方法之间的依赖
- *      解耦: 降低程序间的依赖关系
- *      实际开发中:
- *          应该做到：编译器不依赖，运行时才依赖
- *       解耦的思路:
- *          第一步：使用反射来创建对象，而避免new关键字
- *          第二步: 通过读取配置文件获取要创建的对象全类名
+ * 耦合：程序间的依赖关系
+ * 包括：
+ * 类之间的依赖
+ * 方法之间的依赖
+ * 解耦: 降低程序间的依赖关系
+ * 实际开发中:
+ * 应该做到：编译器不依赖，运行时才依赖
+ * 解耦的思路:
+ * 第一步：使用反射来创建对象，而避免new关键字
+ * 第二步: 通过读取配置文件获取要创建的对象全类名
  */
 
 public class demo01 {
@@ -30,7 +30,7 @@ public class demo01 {
         // 4.执行sql，得到结果集
         ResultSet resultSet = preparedStatement.executeQuery();
         // 5.遍历结果集
-        while (resultSet.next()){
+        while (resultSet.next()) {
             System.out.println(resultSet.getString("name"));
             System.out.println(resultSet.getString("money"));
         }

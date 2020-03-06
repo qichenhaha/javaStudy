@@ -11,7 +11,8 @@
         <result property="password" column="password"/>
         <result property="phoneNum" column="phone_num"/>
         <result property="status" column="status"/>
-        <collection property="roles" column="id" javaType="java.util.ArrayList" ofType="Role" select="com.heidan.dao.IRoleMapper.finByRole"/>
+        <collection property="roles" column="id" javaType="java.util.ArrayList" ofType="Role"
+                    select="com.heidan.dao.IRoleMapper.finByRole"/>
     </resultMap>
 
     <resultMap id="userbyid" type="Users">
@@ -21,7 +22,8 @@
         <result property="password" column="password"/>
         <result property="phoneNum" column="phone_num"/>
         <result property="status" column="status"/>
-        <collection property="roles" column="id" javaType="java.util.ArrayList" ofType="Role" select="com.heidan.dao.IRoleMapper.finByRole"/>
+        <collection property="roles" column="id" javaType="java.util.ArrayList" ofType="Role"
+                    select="com.heidan.dao.IRoleMapper.finByRole"/>
     </resultMap>
 
     <select id="finByUserName" parameterType="java.lang.String" resultMap="usermap">

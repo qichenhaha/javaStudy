@@ -11,12 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="account/findAll">查询啊</a>
-    <a href="account/update">修改</a>
-    <form action="account/save" method="get">
-        <input type="text" name="name">
-        <input type="text" name="money">
-        <input type="submit" value="提交">
-    </form>
+<a href="account/findAll">查询啊</a>
+<a href="account/update">修改</a>
+<form action="account/save" method="get">
+    <input type="text" name="name">
+    <input type="text" name="money">
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

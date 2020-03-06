@@ -7,15 +7,18 @@
     <sql id="product">
         id,product_num,product_name,city_name,departure_time,product_price,product_desc,product_status
     </sql>
-    
+
     <select id="finAll" resultType="Product">
-        select <include refid="product"/> from product
+        select
+        <include refid="product"/>
+        from product
     </select>
 
     <insert id="InsertProduct" parameterType="Product">
         insert into
         product(product_num,product_name,city_name,departure_time,product_price,product_desc,product_status)
-        values (#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus})
+        values
+        (#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus})
 
     </insert>
 
@@ -24,7 +27,9 @@
     </delete>
 
     <select id="ProductById" parameterType="java.lang.Integer" resultType="Product">
-        select <include refid="product"/> from product where id = #{id}
+        select
+        <include refid="product"/>
+        from product where id = #{id}
     </select>
 
 </mapper>

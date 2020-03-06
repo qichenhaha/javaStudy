@@ -33,9 +33,9 @@ public class UserServiceImpl implements IUserService {
         System.out.println("成功进入！userService");
         Users users = iUserMapper.finByUserName(username);
         System.out.println(users);
-        System.out.println(users.getStatus()=="0"?false:true);
+        System.out.println(users.getStatus() == "0" ? false : true);
         // {noop} 密码如果是明文的时候，必须要加入这个
-        User user = new User(users.getUserName(),users.getPassword(),users.getStatus()=="0"?false:true,true,true,true,getAuthority(users.getRoles()));
+        User user = new User(users.getUserName(), users.getPassword(), users.getStatus() == "0" ? false : true, true, true, true, getAuthority(users.getRoles()));
         return user;
     }
 
@@ -43,8 +43,8 @@ public class UserServiceImpl implements IUserService {
     private List<SimpleGrantedAuthority> getAuthority(List<Role> roles) {
         List<SimpleGrantedAuthority> authoritys = new ArrayList();
         for (Role role : roles) {
-            authoritys.add(new SimpleGrantedAuthority("ROLE_"+role.getRoleName()));
-            System.out.println("当前用户身份:===>ROLE_"+role.getRoleName());
+            authoritys.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+            System.out.println("当前用户身份:===>ROLE_" + role.getRoleName());
         }
         return authoritys;
     }

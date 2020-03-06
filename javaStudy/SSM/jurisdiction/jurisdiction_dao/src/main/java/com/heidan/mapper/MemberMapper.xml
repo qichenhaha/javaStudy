@@ -9,7 +9,9 @@
     </sql>
 
     <select id="findById" parameterType="java.lang.Integer" resultType="Member">
-        select <include refid="member"/> from member  where id = #{id}
+        select
+        <include refid="member"/>
+        from member where id = #{id}
     </select>
 
 </mapper>

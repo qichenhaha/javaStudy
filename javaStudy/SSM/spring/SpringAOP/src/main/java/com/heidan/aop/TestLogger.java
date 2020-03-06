@@ -18,17 +18,17 @@ public class TestLogger {
 
     //  环绕通知
     @Around("execution(* com.heidan.dao.*.*(..))")
-    public void around(ProceedingJoinPoint jp){
-        log.info("调用"+jp.getTarget()+"的"+jp.getSignature().getName()+"方法");
-        log.info("方法参数:"+ Arrays.toString(jp.getArgs()));
+    public void around(ProceedingJoinPoint jp) {
+        log.info("调用" + jp.getTarget() + "的" + jp.getSignature().getName() + "方法");
+        log.info("方法参数:" + Arrays.toString(jp.getArgs()));
         try {
             Object result = jp.proceed();
-            log.info("调用"+jp.getTarget()+"的"+jp.getSignature().getName()+"方法"+",返回值是"+result);
+            log.info("调用" + jp.getTarget() + "的" + jp.getSignature().getName() + "方法" + ",返回值是" + result);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            log.info("方法:"+ jp.getSignature().getName()+"发生异常"+throwable);
+            log.info("方法:" + jp.getSignature().getName() + "发生异常" + throwable);
         } finally {
-            log.info("方法"+ jp.getSignature().getName()+"执行结束");
+            log.info("方法" + jp.getSignature().getName() + "执行结束");
         }
 
     }

@@ -13,7 +13,7 @@ public class AccountDaoImpl implements IAccountDao {
         System.out.println("保存账户了！！！");
     }
 
-    public AccountDaoImpl(){
+    public AccountDaoImpl() {
         System.out.println("AccountDaoImpl对象被创建了");
     }
 }

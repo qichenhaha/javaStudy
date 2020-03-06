@@ -9,5 +9,5 @@ import java.util.List;
  */
 
 public interface IPermission {
-     List<Permission> findByRoleId(Integer roleId);
+    List<Permission> findByRoleId(Integer roleId);
 }

@@ -14,9 +14,9 @@
 
 
 <body>
-    <h1>HelloWord 黑蛋</h1>
-    <a href="/hello01">入门程序</a>
-    <button id="butn" style="background-color: red;color: white;">按钮</button>
+<h1>HelloWord 黑蛋</h1>
+<a href="/hello01">入门程序</a>
+<button id="butn" style="background-color: red;color: white;">按钮</button>
 </body>
 <script>
     $(function () {
@@ -24,20 +24,20 @@
             alert("弹出成功！")
             $.ajax({
                 //请求方式
-                type : "POST",
+                type: "POST",
                 //请求的媒体类型
                 contentType: "application/json;charset=UTF-8",
                 //请求地址
-                url : "testjson",
+                url: "testjson",
                 //数据，json字符串
-                data : '{"name":"lishi","set":"女"}',
+                data: '{"name":"lishi","set":"女"}',
                 //请求成功
-                success : function(result) {
+                success: function (result) {
                     console.log(result);
                 },
                 //请求失败，包含具体的错误信息
-                error : function(e){
-                   console.log(e)
+                error: function (e) {
+                    console.log(e)
                 }
             });
         })

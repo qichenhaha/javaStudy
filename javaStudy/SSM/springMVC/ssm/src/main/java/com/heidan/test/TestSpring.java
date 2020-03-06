@@ -11,11 +11,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
 
-
     @Test
-    public void a1(){
+    public void a1() {
         ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-      AccountService as = (AccountService) ac.getBean("accountServiceImpl");
+        AccountService as = (AccountService) ac.getBean("accountServiceImpl");
         as.findAll();
     }
 

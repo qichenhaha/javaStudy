@@ -2,7 +2,6 @@ package com.heidan.entity;
 
 import java.io.Serializable;
 
-
 public class Account implements Serializable {
 
     private Integer id;

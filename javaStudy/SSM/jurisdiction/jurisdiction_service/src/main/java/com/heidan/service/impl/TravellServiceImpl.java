@@ -15,6 +15,7 @@ import java.util.List;
 public class TravellServiceImpl implements ITravellService {
     @Autowired
     private ITravellerMapper iTravellerMapper;
+
     @Override
     public List<Traveller> finInId(Integer id) {
         return iTravellerMapper.finInId(id);

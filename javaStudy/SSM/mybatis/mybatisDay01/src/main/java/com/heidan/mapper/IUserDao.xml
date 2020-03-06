@@ -27,7 +27,7 @@
 
     <select id="ById" parameterType="java.lang.Integer" resultType="com.heidan.entity.User">
 
-        select  * from  user  where id = #{aid}
+        select * from user where id = #{aid}
     </select>
 
 
@@ -36,7 +36,7 @@
 
         <if test="username != null">
 
-          and username = #{username}
+            and username = #{username}
         </if>
     </select>
 
@@ -46,7 +46,7 @@
         <where>
             <if test="list !=null and list.size()>0">
                 <foreach collection="list" item="ids" open="and id in(" close=")" separator=",">
-                        #{ids}
+                    #{ids}
                 </foreach>
             </if>
         </where>
@@ -56,8 +56,9 @@
         <id property="id" column="id"></id>
         <result property="uid" column="uid"></result>
         <result property="money" column="money"></result>
-        <association property="user" column="uid" javaType="com.heidan.entity.User" select="com.heidan.dao.IUserDao.ById">
-    </association>
+        <association property="user" column="uid" javaType="com.heidan.entity.User"
+                     select="com.heidan.dao.IUserDao.ById">
+        </association>
     </resultMap>
 
     <select id="listAccount" resultMap="insac">
@@ -71,19 +72,17 @@
         <result property="birthday" column="birthday"></result>
         <result property="sex" column="sex"></result>
         <result property="address" column="address"></result>
-        <collection property="accounts" ofType="com.heidan.entity.Account" column="id" select="com.heidan.dao.IUserDao.acc"></collection>
+        <collection property="accounts" ofType="com.heidan.entity.Account" column="id"
+                    select="com.heidan.dao.IUserDao.acc"></collection>
     </resultMap>
 
-    <select id="listfindbyId"  resultMap="userbu">
+    <select id="listfindbyId" resultMap="userbu">
         select * from user
     </select>
 
     <select id="acc" resultType="com.heidan.entity.Account">
         select * from account where Uid = #{id}
     </select>
-
-
-
 
 
 </mapper>

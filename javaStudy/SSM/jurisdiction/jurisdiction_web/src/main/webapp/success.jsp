@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>登陆成功！</h1>
-    <a href="logout">退出登陆</a>
+<h1>登陆成功！</h1>
+<a href="logout">退出登陆</a>
 </body>
 </html>

@@ -13,9 +13,9 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-        <!--开启注解扫描,希望处理service和dao，controller不需要spring框架去处理-->
+    <!--开启注解扫描,希望处理service和dao，controller不需要spring框架去处理-->
     <context:component-scan base-package="com">
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <!-- 引入外部数据配置源 -->
@@ -23,45 +23,44 @@
         <property name="location" value="classpath:database.properties"/>
     </bean>
 
-        <!--Spring整合Mybatis框架配置文件-->
-        <!--1.配置连接池-->
-        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-            <property name="driverClass" value="${driver}"/>
-            <property name="jdbcUrl" value="${url}"/>
-            <property name="user" value="${user}"/>
-            <property name="password" value="${password}"/>
-        </bean>
+    <!--Spring整合Mybatis框架配置文件-->
+    <!--1.配置连接池-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driver}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <property name="user" value="${user}"/>
+        <property name="password" value="${password}"/>
+    </bean>
 
-        <!--2.配置工厂对象sqlsessionFactory-->
-        <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
-            <!--通过连接池构建这个sqlsessionFactory工厂-->
-            <property name="dataSource" ref="dataSource"/>
-            <!-- 引入myBatis配置文件 -->
-            <property name="configLocation" value="classpath:mybatis-config.xml"/>
-            <!-- 配置mapper文件位置 -->
-            <property name="mapperLocations" value="classpath:com/heidan/mapper/*.xml"/>
-        </bean>
-        <!--3.接口所在的包-->
-        <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-            <property name="basePackage" value="com.heidan.dao"/>
-        </bean>
+    <!--2.配置工厂对象sqlsessionFactory-->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--通过连接池构建这个sqlsessionFactory工厂-->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 引入myBatis配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!-- 配置mapper文件位置 -->
+        <property name="mapperLocations" value="classpath:com/heidan/mapper/*.xml"/>
+    </bean>
+    <!--3.接口所在的包-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.heidan.dao"/>
+    </bean>
 
-        <!-- spring中基于注解声明式事务控制配置步骤-->
-        <!-- 1.配置事务管理器-->
-        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-            <property name="dataSource" ref="dataSource"></property>
-        </bean>
+    <!-- spring中基于注解声明式事务控制配置步骤-->
+    <!-- 1.配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
 
 
-        <!--2.开启spring对注解的支持-->
-        <tx:annotation-driven proxy-target-class="false" transaction-manager="transactionManager" />
-        <!--3.在需要事务支持的地方使用注解
-        @Transactional(propagation= Propagation.SUPPORTS,readOnly = true)
-        放在方法上
-        -->
-        <!--此标签开启AOP注解-->
-        <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-
+    <!--2.开启spring对注解的支持-->
+    <tx:annotation-driven proxy-target-class="false" transaction-manager="transactionManager"/>
+    <!--3.在需要事务支持的地方使用注解
+    @Transactional(propagation= Propagation.SUPPORTS,readOnly = true)
+    放在方法上
+    -->
+    <!--此标签开启AOP注解-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 
 </beans>

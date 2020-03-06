@@ -12,12 +12,14 @@ import java.util.List;
 public interface IUserDao {
     /**
      * 查询所有
+     *
      * @return
      */
     List<User> listAll();
 
     /**
      * 插入数据
+     *
      * @param user
      * @return
      */
@@ -39,6 +41,5 @@ public interface IUserDao {
     List<User> listfindbyId();
 
     List<Account> acc(Integer id);
-
 
 }

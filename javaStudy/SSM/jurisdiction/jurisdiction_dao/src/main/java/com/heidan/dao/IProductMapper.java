@@ -12,13 +12,15 @@ public interface IProductMapper {
 
     /**
      * 查询所有的产品信息
-     * @return  返回所有产品信息
+     *
+     * @return 返回所有产品信息
      * @throws Exception
      */
     public List<Product> finAll() throws Exception;
 
     /**
      * 插入条产品
+     *
      * @param product
      * @return
      */
@@ -26,6 +28,7 @@ public interface IProductMapper {
 
     /**
      * 删除一条产品新增
+     *
      * @param id
      * @return
      */
@@ -33,6 +36,7 @@ public interface IProductMapper {
 
     /**
      * 修改产品信息
+     *
      * @param product
      * @return
      */

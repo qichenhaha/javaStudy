@@ -8,8 +8,10 @@
     </sql>
 
     <select id="finInId" parameterType="java.lang.Integer" resultType="Traveller">
-        select <include refid="traveller"/> from  traveller
-         WHERE id in
-         (SELECT order_traveller.travellerId FROM order_traveller WHERE order_traveller.orderId = #{id})
+        select
+        <include refid="traveller"/>
+        from traveller
+        WHERE id in
+        (SELECT order_traveller.travellerId FROM order_traveller WHERE order_traveller.orderId = #{id})
     </select>
 </mapper>

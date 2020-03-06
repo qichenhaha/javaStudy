@@ -17,9 +17,9 @@ public class MemberController {
     private IMemberService iMemberServices;
 
     @RequestMapping("findById")
-    public Object findById(Integer id){
+    public Object findById(Integer id) {
         System.out.println("成功进入");
-        System.out.println("id==>"+id);
+        System.out.println("id==>" + id);
         Member byId = iMemberServices.findById(id);
         System.out.println("controller获取数据:" + byId);
         return "";

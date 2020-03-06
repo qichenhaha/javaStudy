@@ -24,7 +24,7 @@ public class update {
         System.out.println(path);
         // 判断，该路径是否存在
         File file = new File(path);
-        if(!file.exists()){
+        if (!file.exists()) {
             // 创建该文件夹
             file.mkdirs();
         }
@@ -35,12 +35,11 @@ public class update {
         // 把文件的名称设置唯一值，uuid
         String uuid = UUID.randomUUID().toString().replace("-", "");
         System.out.println(uuid);
-        filename = uuid+"_"+filename;
+        filename = uuid + "_" + filename;
         // 完成文件上传
-        upload.transferTo(new File(path,filename));
+        upload.transferTo(new File(path, filename));
 
         return "success";
     }
-
 
 }

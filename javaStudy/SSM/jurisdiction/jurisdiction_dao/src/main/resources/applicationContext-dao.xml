@@ -47,17 +47,13 @@
     </bean>
 
     <!--2.开启spring对注解的支持-->
-    <tx:annotation-driven proxy-target-class="false" transaction-manager="transactionManager" />
+    <tx:annotation-driven proxy-target-class="false" transaction-manager="transactionManager"/>
     <!--3.在需要事务支持的地方使用注解
     @Transactional(propagation= Propagation.SUPPORTS,readOnly = true)
     放在方法上
     -->
     <!--此标签开启AOP注解-->
-<!--    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
-
-
-
-
+    <!--    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
 
 
 </beans>

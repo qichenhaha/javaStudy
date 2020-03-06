@@ -1,13 +1,7 @@
-package com.heidan.entity;
+package com.heidan.service.pojo;
 
-import java.io.Serializable;
-
-/**
- * Create by heidan on 2019/12/31 12:22
- */
-
-public class Users implements Serializable {
-    private int id;
+public class UserInfo {
+    private Integer id;
 
     private String email;
 
@@ -19,13 +13,11 @@ public class Users implements Serializable {
 
     private String status;
 
-
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,7 +26,7 @@ public class Users implements Serializable {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
     }
 
     public String getUserName() {
@@ -42,7 +34,7 @@ public class Users implements Serializable {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getPassword() {
@@ -50,7 +42,7 @@ public class Users implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getPhoneNum() {
@@ -58,7 +50,7 @@ public class Users implements Serializable {
     }
 
     public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+        this.phoneNum = phoneNum == null ? null : phoneNum.trim();
     }
 
     public String getStatus() {
@@ -66,12 +58,12 @@ public class Users implements Serializable {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = status == null ? null : status.trim();
     }
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "UserInfo{" +
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", userName='" + userName + '\'' +

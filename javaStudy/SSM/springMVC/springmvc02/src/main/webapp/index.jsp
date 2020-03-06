@@ -11,10 +11,10 @@
     <title>文件上传</title>
 </head>
 <body>
-    <h3>文件上传</h3>
-    <form action="file" method="post" enctype="multipart/form-data">
-        <input type="file" name="upload">
-        <input type="submit" value="上传">
-    </form>
+<h3>文件上传</h3>
+<form action="file" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload">
+    <input type="submit" value="上传">
+</form>
 </body>
 </html>
